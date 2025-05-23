@@ -15,13 +15,16 @@ class _HomeScreenState extends State<HomeScreen> {
         buildContext, MaterialPageRoute(builder: (buildContext) => clsname));
   }
 
-  static const String titleGoogleMapSimple = "Google Map Simple";
-  static const String titleGoogleMapCurrentLocation =
-      "Google Map with Current Location";
-  static const String titleGoogleMapSearchPlaces = "Google Map Search Places";
-  static const String titleGoogleMapNearbyPlaces = "Near By Places";
-  static const String titleGoogleMapPolylineBetween2Points =
-      "Polyline between 2 points";
+  static const (String, Color) googleMapSimple =
+      ("Google Map Simple", Colors.redAccent);
+  static const (String, Color) googleMapCurrentLocation =
+      ("Google Map with Current Location", Colors.blueAccent);
+  static const (String, Color) googleMapSearchPlaces =
+      ("Google Map Search Places", Colors.greenAccent);
+  static const (String, Color) googleMapNearbyPlaces =
+      ("Near By Places", Colors.purpleAccent);
+  static const (String, Color) googleMapPolylineBetween2Points =
+      ("Polyline between 2 points", Colors.orangeAccent);
 
   @override
   Widget build(BuildContext context) {
@@ -35,41 +38,70 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              // Google Map Simple
               ElevatedButton(
                   onPressed: () => visitPage(
                       context,
-                      const NearByScreenPage(
-                        title: titleGoogleMapSimple,
+                      NearByScreenPage(
+                        title: googleMapSimple.$1,
+                        color: googleMapSimple.$2,
                       )),
-                  child: const Text(titleGoogleMapSimple)),
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: googleMapSimple.$2),
+                  child: Text(googleMapSimple.$1)),
               const SizedBox(height: 10),
+
+              // Google Map with Current Location
               ElevatedButton(
                   onPressed: () => visitPage(
                       context,
-                      const NearByScreenPage(
-                          title: titleGoogleMapCurrentLocation)),
-                  child: const Text(titleGoogleMapCurrentLocation)),
+                      NearByScreenPage(
+                        title: googleMapCurrentLocation.$1,
+                        color: googleMapCurrentLocation.$2,
+                      )),
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: googleMapCurrentLocation.$2),
+                  child: Text(googleMapCurrentLocation.$1)),
               const SizedBox(height: 10),
+
+              // Google Map Search Places
               ElevatedButton(
                   onPressed: () => visitPage(
                       context,
-                      const NearByScreenPage(
-                          title: titleGoogleMapSearchPlaces)),
-                  child: const Text(titleGoogleMapSearchPlaces)),
+                      NearByScreenPage(
+                        title: googleMapSearchPlaces.$1,
+                        color: googleMapSearchPlaces.$2,
+                      )),
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: googleMapSearchPlaces.$2),
+                  child: Text(googleMapSearchPlaces.$1)),
               const SizedBox(height: 10),
+
+              // Google Map Near By Places
               ElevatedButton(
                   onPressed: () => visitPage(
                       context,
-                      const NearByScreenPage(
-                          title: titleGoogleMapNearbyPlaces)),
-                  child: const Text(titleGoogleMapNearbyPlaces)),
+                      NearByScreenPage(
+                        title: googleMapNearbyPlaces.$1,
+                        color: googleMapNearbyPlaces.$2,
+                      )),
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: googleMapNearbyPlaces.$2),
+                  child: Text(googleMapNearbyPlaces.$1)),
               const SizedBox(height: 10),
+
+              // Google Map Polyline between 2 points
               ElevatedButton(
-                  onPressed: () => visitPage(
-                      context,
-                      const NearByScreenPage(
-                          title: titleGoogleMapPolylineBetween2Points)),
-                  child: const Text(titleGoogleMapPolylineBetween2Points)),
+                onPressed: () => visitPage(
+                    context,
+                    NearByScreenPage(
+                      title: googleMapPolylineBetween2Points.$1,
+                      color: googleMapPolylineBetween2Points.$2,
+                    )),
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: googleMapPolylineBetween2Points.$2),
+                child: Text(googleMapPolylineBetween2Points.$1),
+              ),
             ],
           )),
     );

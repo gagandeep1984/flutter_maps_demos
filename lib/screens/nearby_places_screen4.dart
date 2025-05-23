@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 class NearByScreenPage extends StatefulWidget {
   // const HomeScreen({Key? key}) : super(key: key);
   // const NearByScreenPage(String title, {super.key});
-  const NearByScreenPage({required this.title, Key? key}) : super(key: key);
+  const NearByScreenPage({required this.title, required this.color, Key? key})
+      : super(key: key);
   final String title;
+  final Color color;
 
   @override
   State<NearByScreenPage> createState() => _NearByScreenPageState();
@@ -18,6 +20,7 @@ class _NearByScreenPageState extends State<NearByScreenPage> {
     return Scaffold(
         appBar: AppBar(
           title: Text(widget.title),
+          backgroundColor: widget.color,
           actions: [
             IconButton(
               icon: const Icon(Icons.search),
