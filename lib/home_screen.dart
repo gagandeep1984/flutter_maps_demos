@@ -1,4 +1,8 @@
+import 'package:demo_maps/screens/current_location_screen2.dart';
 import 'package:demo_maps/screens/nearby_places_screen4.dart';
+import 'package:demo_maps/screens/polyline_screen5.dart';
+import 'package:demo_maps/screens/search_places_screen3.dart';
+import 'package:demo_maps/screens/simple_map_screen1.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -42,7 +46,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ElevatedButton(
                   onPressed: () => visitPage(
                       context,
-                      NearByScreenPage(
+                      SimpleMapScreenPage(
                         title: googleMapSimple.$1,
                         color: googleMapSimple.$2,
                       )),
@@ -55,7 +59,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ElevatedButton(
                   onPressed: () => visitPage(
                       context,
-                      NearByScreenPage(
+                      CurrentLocationScreenPage(
                         title: googleMapCurrentLocation.$1,
                         color: googleMapCurrentLocation.$2,
                       )),
@@ -68,7 +72,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ElevatedButton(
                   onPressed: () => visitPage(
                       context,
-                      NearByScreenPage(
+                      SearchPlacesScreenPage(
                         title: googleMapSearchPlaces.$1,
                         color: googleMapSearchPlaces.$2,
                       )),
@@ -94,7 +98,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ElevatedButton(
                 onPressed: () => visitPage(
                     context,
-                    NearByScreenPage(
+                    PolylineScreenPage(
                       title: googleMapPolylineBetween2Points.$1,
                       color: googleMapPolylineBetween2Points.$2,
                     )),
