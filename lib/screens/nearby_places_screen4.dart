@@ -35,7 +35,12 @@ class _NearByScreenPageState extends State<NearByScreenPage> {
             onPressed: () {
               Navigator.pop(context);
             },
-            child: Text(widget.title),
+            style: ElevatedButton.styleFrom(
+              backgroundColor: widget.color,
+            ),
+            child: Text(
+              widget.title,
+            ),
           ),
         ));
   }
